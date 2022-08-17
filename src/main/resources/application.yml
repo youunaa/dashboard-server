@@ -6,10 +6,11 @@ spring:
     url: jdbc:mariadb://34.125.40.125:3306/okestro
     username: root
     password: user1234
-
-logging:
   level:
     root: info
+  batch:
+    jdbc:
+      initialize-schema: always
 
 server:
   port: 8080
