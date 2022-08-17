@@ -1,0 +1,17 @@
+spring:
+  main:
+    web-application-type: reactive
+  datasource:
+    driverClassName: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://34.125.40.125:3306/okestro
+    username: root
+    password: user1234
+
+logging:
+  level:
+    root: info
+
+server:
+  port: 8080
+
+
