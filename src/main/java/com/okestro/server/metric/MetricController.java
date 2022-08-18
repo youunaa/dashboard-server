@@ -1,23 +1,29 @@
 package com.okestro.server.metric;
 
+import com.okestro.server.base.BaseController;
+import com.okestro.server.base.BaseModel;
+import com.okestro.server.base.BodyModel;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RequiredArgsConstructor
+@RequestMapping("/metric")
+@CrossOrigin
 @RestController
-public class MetricController {
+public class MetricController extends BaseController {
 
     private final MetricService metricService;
 
-    @PostMapping("/metric/test")
-    public ResponseEntity<?> addRedisKey() {
-        metricService.saveMetricValue();
-        return new ResponseEntity<>(HttpStatus.CREATED);
+    @GetMapping("/total")
+    public BaseModel metricTotal() {
+        BodyModel body = new BodyModel();
+        body.setBody(metricService.metricTotal());
+        return ok(body);
     }
 
 }

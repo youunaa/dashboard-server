@@ -1,6 +1,7 @@
 package com.okestro.server.metric;
 
 import com.okestro.server.metric.model.Metric;
+import com.okestro.server.metric.model.MetricAvg;
 import com.okestro.server.metric.model.MetricType;
 import com.okestro.server.metric.repository.MetricRepository;
 import com.sun.management.OperatingSystemMXBean;
@@ -43,6 +44,16 @@ public class MetricServiceImpl implements MetricService {
                     .build();
             metricRepository.save(metric);
         }
+    }
+
+    @Override
+    public MetricAvg metricTotal() {
+        MetricAvg metricAvg = MetricAvg.builder()
+                .cpuAvg(metricRepository.selectCpuAvg())
+                .memorySizeAvg(metricRepository.selectMemorySizeAvg())
+                .memoryTotalAvg(metricRepository.selectMemoryTotalAvg())
+                .build();
+        return metricAvg;
     }
 
 }

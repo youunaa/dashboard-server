@@ -6,9 +6,6 @@ import com.okestro.server.base.BodyModel;
 import com.okestro.server.batch.repository.BatchExecuteRepository;
 import com.okestro.server.metric.repository.MetricRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,6 +24,7 @@ public class BatchController extends BaseController {
 
     /**
      * 배치 서버 execute 실행 결과
+     *
      * @return
      */
     @ResponseBody
@@ -39,7 +37,6 @@ public class BatchController extends BaseController {
     }
 
     /**
-     *
      * @return
      */
     @ResponseBody
