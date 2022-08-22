@@ -46,6 +46,10 @@ public class MetricServiceImpl implements MetricService {
         }
     }
 
+    /**
+     * Metric 통계 데이터 조회
+     * @return
+     */
     @Override
     public MetricAvg metricTotal() {
         MetricAvg metricAvg = MetricAvg.builder()

@@ -19,6 +19,10 @@ public class MetricController extends BaseController {
 
     private final MetricService metricService;
 
+    /**
+     * Metric 통계 데이터 조회
+     * @return
+     */
     @GetMapping("/total")
     public BaseModel metricTotal() {
         BodyModel body = new BodyModel();

@@ -9,6 +9,10 @@ public interface MetricService {
      */
     void saveMetricValue();
 
+    /**
+     * Metric 통계 데이터 조회
+     * @return
+     */
     MetricAvg metricTotal();
 
 }
